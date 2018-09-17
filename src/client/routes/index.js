@@ -17,7 +17,7 @@ import adminRoutes from './admin';
 // Config
 import config from '../../api/config';
 
-console.log('staging:', config);
+console.log('foo:', config);
 ReactGA.initialize(config.googleAnalytics.propertyId, { debug: false });
 
 function Routes() {
