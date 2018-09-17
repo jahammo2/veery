@@ -7,6 +7,7 @@ import {
   Router
 } from 'react-router';
 import ReactGA from 'react-ga';
+import express from 'express';
 
 // Components
 import App from '../components/App';
