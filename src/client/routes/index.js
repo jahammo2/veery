@@ -7,6 +7,7 @@ import {
   Router
 } from 'react-router';
 import ReactGA from 'react-ga';
+import express from 'express';
 
 // Components
 import App from '../components/App';
@@ -17,7 +18,7 @@ import adminRoutes from './admin';
 // Config
 import config from '../../api/config';
 
-console.log('staging test:', config);
+console.log('bar test:', config);
 ReactGA.initialize(config.googleAnalytics.propertyId, { debug: false });
 
 function Routes() {
