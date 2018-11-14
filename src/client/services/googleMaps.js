@@ -83,13 +83,14 @@ function buildBaseMap(mapProps) {
 }
 
 function getBounds(map) {
-  const { b, f } = map.getBounds();
+  const { j, l } = map.getBounds();
+  console.log(map.getBounds());
 
   return {
-    latitudeMin: f.b,
-    latitudeMax: f.f,
-    longitudeMin: b.b,
-    longitudeMax: b.f
+    latitudeMin: l.j,
+    latitudeMax: l.l,
+    longitudeMin: j.j,
+    longitudeMax: j.l
   };
 }
 
