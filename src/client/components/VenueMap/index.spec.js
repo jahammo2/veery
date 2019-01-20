@@ -40,13 +40,13 @@ describe('VenueMap', function() {
     mockLongitudeMax = faker.address.longitude();
 
     const getBounds = this.sandbox.stub().returns({
-      b: {
-        b: mockLongitudeMin,
-        f: mockLongitudeMax
+      dontMatter: {
+        j: mockLatitudeMin,
+        l: mockLatitudeMax
       },
-      f: {
-        b: mockLatitudeMin,
-        f: mockLatitudeMax
+      alsoDontMatter: {
+        j: mockLongitudeMin,
+        l: mockLongitudeMax
       }
     });
 

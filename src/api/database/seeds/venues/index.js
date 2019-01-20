@@ -1,4 +1,5 @@
 module.exports = [
+  require('./colombia'),
   require('./colorado'),
   require('./italy'),
   require('./northCarolina'),
