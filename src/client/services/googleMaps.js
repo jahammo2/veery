@@ -10,6 +10,13 @@ const orangeBright = '#b36b00';
 const orangeBurnt = '#b36b00';
 const white = '#CDE1F7';
 
+const DURHAM_BOUNDS = {
+  latitudeMin: 35.76406402447821,
+  latitudeMax: 36.220733032370674,
+  longitudeMin: -79.11367046520235,
+  longitudeMax: -78.69426953479768
+};
+
 function buildMarkerIcon(venueId, currentFocusedVenue) {
   const path = 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z';
   const { fillColor, fillOpacity, scale } = currentFocusedVenue._id === venueId ?
@@ -83,15 +90,22 @@ function buildBaseMap(mapProps) {
 }
 
 function getBounds(map) {
-  const { j, l } = map.getBounds();
-  console.log(map.getBounds());
+  try {
+    const bounds = map.getBounds();
+    const keys = Object.keys(bounds);
 
-  return {
-    latitudeMin: l.j,
-    latitudeMax: l.l,
-    longitudeMin: j.j,
-    longitudeMax: j.l
-  };
+    const latitude = bounds[keys[0]];
+    const longitude = bounds[keys[1]];
+
+    return {
+      latitudeMin: latitude.j,
+      latitudeMax: latitude.l,
+      longitudeMin: longitude.j,
+      longitudeMax: longitude.l
+    };
+  } catch (_) {
+    return DURHAM_BOUNDS;
+  }
 }
 
 export default {
